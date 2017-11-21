@@ -1,0 +1,30 @@
+Discussion of Complexities:
+
+Time Complexity:
+
+Aside from the conversion from a string to an int array, the time complexity of the algorithm is O ( n squared ) in the worst case. However; the algorithm works with relative values so it can converge to O (k times n) , for a longer terrain width, since elevation differences in topograhy is "generally" less than that of the terrain width.
+
+
+Memory Complexity:
+
+The memory complexity is n. Since the previous array is already inside the memory it doesnt count. However, for the sake of relative height calculations, a list had been used, so it allocates n length memory.
+
+Optimal Complexities:
+
+Time Complexity:
+
+For time complexity, instead of traversing with the water level in another loop, just numbers can be traversed, ie. get a ridge number maximum, and count ridge level with lower elevations on the way until you meet another ridge, which can have an O(n) time complexity. 
+
+Memory Complexity:
+
+1 - Instead of using a list as a convenience for sorting, the minimum and maximum values could have been found traversing the array with a for loop once, so the memory complexity could have been reduced to O(1), since no data structure would have been used, and the integer array had already occupied memory before.
+
+2 - After determination of the relative height difference, if value ranges permit, the values could have been put in byte (-127 ~ 127 ) or short (-32k ~ 32k) arrays to reduce memory, and set the initial integer array to null to conserve memory.
+
+
+Of course, there is another method, which can give geometrical results; for every water level, put a water rectangle with the terrain length and erase its parts which are inside a land rectangle, and for those which intersects two land rectangles in horizontal axis, count the areas. It may appear to be awkward, and its complexity can be a little hard to compute since those are geometrical algorithms. However, the end result would be graphical and arithmetical, and can be put graphically on a bar chart with another color with the original terrain with a different color, and can be shown to the customers as : "Well, if you had chosen our fintech products, the blue parts would have been your probable revenues". Since a picture is worth a thousand words, as the Chinese say, that method can be chosen as well.
+
+
+
+  
+
